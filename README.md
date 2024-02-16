@@ -22,6 +22,7 @@ Follow the [PyTorch](https://pytorch.org/) installation instructions to install 
 ```
 mamba activate ros2  # (use the name here you decided to call this conda environment)
 mamba install ros-humble-image-tools
+mamba install ros-humble-vision-msgs
 cd ~
 mkdir -p ros2_ws/src
 cd ros2_ws
@@ -30,7 +31,7 @@ colcon build --symlink-install
 ```
 You may receive a warning on the colcon build step: "SetuptoolsDeprecationWarning: setup.py install is deprecated", this can be ignored.
 
-The above steps assume a RoboStack mamba/conda ROS2 install. If using other installation process, replace the RoboStack image-tools package install step with whichever command is appropriate for your environment. The image-tools package is not required for coco_detector, it is just used in the steps below for convenient demonstration.
+The above steps assume a RoboStack mamba/conda ROS2 install. If using other installation process, replace the RoboStack image-tools and vision-msgs packages install steps with whichever command is appropriate for your environment. The image-tools package is not required for coco_detector, it is just used in the steps below for convenient demonstration. However vision-msgs is required (this is where the ROS2 DetectionArray2D message is defined)
 
 ## Activate Environment
 
