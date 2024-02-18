@@ -99,7 +99,7 @@ class CocoDetectorNode(Node):
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding="rgb8")
         image = cv_image.copy().transpose((2, 0, 1))
         batch_image = np.expand_dims(image, axis=0)
-        tensor_image = torch.FloatTensor(batch_image/255.0, device=self.device)
+        tensor_image = torch.tensor(batch_image/255.0, dtype=torch.float, device=self.device)
         mobilenet_detections = self.model(tensor_image)[0]  # pylint: disable=E1102 disable not callable warning
         filtered_detections = [Detection(label_id, box, score) for label_id, box, score in
             zip(mobilenet_detections["labels"],
