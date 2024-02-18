@@ -65,6 +65,32 @@ ros2 run image_tools showimage --ros-args -r /image:=/annotated_image
 
 ## Suggested Setup For Mobile Robotics
 
+These suggestions are for a Raspberry Pi 3 Model B+ running ROS2.
+
+As of 16/02/2024, the PyTorch Conda install does not appear to be working for Raspberry Pi 3 Model B+.
+There may be other installation options, but I have not explored that.
+
+As an alternative if you have a ROS2 workstation connected to the same network, I suggest publishing the compressed image on the Raspberry Pi and running the COCO detector on the workstation.
+
+The below setup involves the ROS2 compression transport on both the Raspberry Pi and workstation. If using RoboStack ROS2 Humble you can install on each with:
+
+```mamba install ros-humble-compressed-image-transport```
+
+Raspberry Pi (run each command in seperate terminals):
+
+```ros2 run image_tools cam2image --ros-args -r /image:=/charlie/image```
+
+```ros2 run image_transport republish raw compressed --ros-args -r in:=/charlie/image -r out/compressed:=/charlie/compressed```
+
+Workstation (run each command in seperate terminals):
+
+```ros2 run image_transport republish compressed raw --ros-args -r /in/compressed:=/charlie/compressed -r /out:=/server/image```
+
+```ros2 run coco_detector coco_detector_node --ros-args -r /image:=/server/image```
+
+I have relabelled topic names for clarity and keeping the image topics on the different machines seperate. Compression is not necessary, but I have poor performance on my network without compression.
+
+Note you could use launch files (for convenience) to run the above nodes. I do not cover that here as it will be specific to your setup.
 
 ## External Links
 
