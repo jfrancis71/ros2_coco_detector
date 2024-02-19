@@ -63,6 +63,15 @@ To view the image stream annotated with the labels and bounding boxes:
 ros2 run image_tools showimage --ros-args -r /image:=/annotated_image
 ```
 
+Example Use:
+
+```
+ros2 run coco_detector coco_detector_node --ros-args -p publish_annotated_image:=False -p device:=cuda -p detection_threshold:=0.7
+```
+
+This will run the coco detector without publishing the annotated image (it is True by default) using the default CUDA device (device=cpu by default). It sets the detection_threshold to 0.7 (it is 0.9 by default). The detection_threshold should be between 0.0 and 1.0; the higher this number the more detections will be rejected. If you have too many false detections try increasing this number. Thus only Detection2DArray messages are published on topic /detected_objects.
+
+
 ## Suggested Setup For Mobile Robotics
 
 These suggestions are for a Raspberry Pi 3 Model B+ running ROS2.
