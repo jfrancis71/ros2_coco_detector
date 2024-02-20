@@ -101,12 +101,26 @@ I have relabelled topic names for clarity and keeping the image topics on the di
 
 Note you could use launch files (for convenience) to run the above nodes. I do not cover that here as it will be specific to your setup.
 
+## Notes
+
+The ROS2 documentation suggests that the ObjectHypotheses.class_id should be an identifier that the client should then look up in a database. This seems more complex than I have a need for. So my implementation just places the class label here directly, eg. class_id = "dog".
+
+## Alternative Implementations
+
+These are 3'rd Party implementations of object detection wihin the ROS2 ecosystem:
+
+[NVIDIA Isaac](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_object_detection)
+
+Please note the above are not connected with me in any way, they are resources that I have found on the internet that may be of interest.
+
 ## External Links
 
-[COCO Home](https://cocodataset.org/#home)
+[COCO Dataset Homepage](https://cocodataset.org/#home)
 
 [Microsoft COCO: Common Objects in Context](http://arxiv.org/abs/1405.0312)
 
 [PyTorch MobileNet](https://pytorch.org/vision/stable/models/generated/torchvision.models.detection.fasterrcnn_mobilenet_v3_large_320_fpn.html)
 
 [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861)
+
+[Link to ROS2 Vision Msgs Github repo](https://github.com/ros-perception/vision_msgs)
