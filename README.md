@@ -1,5 +1,11 @@
 # ros2_coco_detector
-Integrate PyTorch MobileNet for Microsoft COCO object detection into ROS2 environment
+Integrate PyTorch Torchvision MobileNet for Microsoft COCO object detection into the ROS2 environment
+
+## YouTube Demonstration
+<a href="https://www.youtube.com/watch?v=emUs0nwwde8">
+    <img src="https://img.youtube.com/vi/emUs0nwwde8/0.jpg" height=320>
+</a>
+
 
 ## Packages
 
@@ -7,9 +13,11 @@ coco_detector: package containing coco_detector_node for listening on ROS2 topic
 
 ### Tested Hardware
 
+Dell Precision Tower 2210, NVIDIA RTX2070 (GPU is optional)
 
 ### Tested Software
 
+Ubuntu 22.04, ROS2 Humble (RoboStack), PyTorch 2.1.2, CUDA 12.2 (CUDA is only needed if you require GPU)
 
 ## Installation
 
@@ -103,15 +111,13 @@ Note you could use launch files (for convenience) to run the above nodes. I do n
 
 ## Notes
 
-The ROS2 documentation suggests that the ObjectHypotheses.class_id should be an identifier that the client should then look up in a database. This seems more complex than I have a need for. So my implementation just places the class label here directly, eg. class_id = "dog".
+The ROS2 documentation suggests that the ObjectHypotheses.class_id should be an identifier that the client should then look up in a database. This seems more complex than I have a need for. So this implementation just places the class label here directly, eg. class_id = "dog". See the ROS2 Vision Msgs Github link in the external links section below for more details.
 
 ## Alternative Implementations
 
 These are 3'rd Party implementations of object detection wihin the ROS2 ecosystem:
 
 [NVIDIA Isaac](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_object_detection)
-
-Please note the above are not connected with me in any way, they are resources that I have found on the internet that may be of interest.
 
 ## External Links
 
@@ -123,4 +129,4 @@ Please note the above are not connected with me in any way, they are resources t
 
 [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications](https://arxiv.org/abs/1704.04861)
 
-[Link to ROS2 Vision Msgs Github repo](https://github.com/ros-perception/vision_msgs)
+[ROS2 Vision Msgs Github repo](https://github.com/ros-perception/vision_msgs)
