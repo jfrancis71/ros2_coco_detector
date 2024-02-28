@@ -3,6 +3,7 @@
 Subscribes to /image and publishes Detection2DArray message on topic /detected_objects.
 Also publishes (by default) annotated image with bounding boxes on /annotated_image.
 Uses PyTorch and FasterRCNN_MobileNet model from torchvision.
+Bounding Boxes use image convention, ie center.y = 0 means top of image.
 """
 
 import collections
