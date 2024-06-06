@@ -6,6 +6,12 @@ Integrate PyTorch Torchvision MobileNet for Microsoft COCO object detection into
     <img src="https://img.youtube.com/vi/emUs0nwwde8/0.jpg" height=320>
 </a>
 
+## Summary
+
+This package performs object detection in the ROS2 environment. There are certainly more sophisticated object detection frameworks out there, eg.
+[NVIDIA Isaac](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_object_detection).
+
+The chief virtue of this package is the simplicity of the codebase and use of standardised ROS2 messages, with the goal of being simple to understand and to use.
 
 ## Packages
 
@@ -112,12 +118,6 @@ Note you could use launch files (for convenience) to run the above nodes. I do n
 ## Notes
 
 The ROS2 documentation suggests that the ObjectHypotheses.class_id should be an identifier that the client should then look up in a database. This seems more complex than I have a need for. So this implementation just places the class label here directly, eg. class_id = "dog". See the ROS2 Vision Msgs Github link in the external links section below for more details.
-
-## Alternative Implementations
-
-These are 3'rd Party implementations of object detection wihin the ROS2 ecosystem:
-
-[NVIDIA Isaac](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_object_detection)
 
 ## External Links
 
