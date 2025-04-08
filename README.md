@@ -29,7 +29,6 @@ Ubuntu 22.04, ROS2 Jazzy (RoboStack), PyTorch 2.1.2, CUDA 12.2 (CUDA is only nee
 
 Follow the [RoboStack](https://robostack.github.io/GettingStarted.html) installation instructions to install ROS2 (use Jazzy). (Be sure to add the tools for local development).
 
-(Ensure you have also followed the step Installation tools for local development in the above instructions)
 
 Follow the [PyTorch](https://pytorch.org/) installation instructions to install PyTorch. The Conda install is no longer available, however the pip install option is working at present (08/04/2025).
 I selected CUDA=11.8. You may need to change this depending on your cuda setup. If not using GPU, select the CPU install.
