@@ -104,11 +104,11 @@ Raspberry Pi (run each command in seperate terminals):
 
 ```ros2 run image_tools cam2image --ros-args -r /image:=/charlie/image```
 
-```ros2 run image_transport republish raw compressed --ros-args -r in:=/charlie/image -r out/compressed:=/charlie/compressed```
+```ros2 run image_transport republish --ros-args -p in_transport:=raw -p out_transport:=compressed -r in:=/charlie/image -r out/compressed:=/charlie/compressed```
 
 Workstation (run each command in seperate terminals):
 
-```ros2 run image_transport republish compressed raw --ros-args -r /in/compressed:=/charlie/compressed -r /out:=/server/image```
+```ros2 run image_transport republish --ros-args -p in_transport:=compressed -p out_transport:=raw -r /in/compressed:=/charlie/compressed -r /out:=/server/image```
 
 ```ros2 run coco_detector coco_detector_node --ros-args -r /image:=/server/image```
 
