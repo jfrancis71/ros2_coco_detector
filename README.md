@@ -23,20 +23,21 @@ Dell Precision Tower 2210, NVIDIA RTX2070 (GPU is optional)
 
 ### Tested Software
 
-Ubuntu 22.04, ROS2 Humble (RoboStack), PyTorch 2.1.2, CUDA 12.2 (CUDA is only needed if you require GPU)
+Ubuntu 22.04, ROS2 Jazzy (RoboStack), PyTorch 2.1.2, CUDA 12.2 (CUDA is only needed if you require GPU)
 
 ## Installation
 
-Follow the [RoboStack](https://robostack.github.io/GettingStarted.html) installation instructions to install ROS2
+Follow the [RoboStack](https://robostack.github.io/GettingStarted.html) installation instructions to install ROS2 (use Jazzy). (Be sure to add the tools for local development).
 
 (Ensure you have also followed the step Installation tools for local development in the above instructions)
 
-Follow the [PyTorch](https://pytorch.org/) installation instructions to install PyTorch (selecting the conda option).
+Follow the [PyTorch](https://pytorch.org/) installation instructions to install PyTorch. The Conda install is no longer available, however the pip install option is working at present (08/04/2025).
+I selected CUDA=11.8. You may need to change this depending on your cuda setup. If not using GPU, select the CPU install.
 
 ```
 mamba activate ros2  # (use the name here you decided to call this conda environment)
-mamba install ros-humble-image-tools
-mamba install ros-humble-vision-msgs
+mamba install ros-jazzy-image-tools
+mamba install ros-jazzy-vision-msgs
 cd ~
 mkdir -p ros2_ws/src
 cd ros2_ws
@@ -95,9 +96,9 @@ There may be other installation options, but I have not explored that.
 
 As an alternative if you have a ROS2 workstation connected to the same network, I suggest publishing the compressed image on the Raspberry Pi and running the COCO detector on the workstation.
 
-The below setup involves the ROS2 compression transport on both the Raspberry Pi and workstation. If using RoboStack ROS2 Humble you can install on each with:
+The below setup involves the ROS2 compression transport on both the Raspberry Pi and workstation. If using RoboStack ROS2 Jazzy you can install on each with:
 
-```mamba install ros-humble-compressed-image-transport```
+```mamba install ros-jazzy-compressed-image-transport```
 
 Raspberry Pi (run each command in seperate terminals):
 
