@@ -15,7 +15,9 @@ The chief virtue of this package is the simplicity of the codebase and use of st
 
 ## Packages
 
-coco_detector: package containing coco_detector_node for listening on ROS2 topic /image and publishing ROS2 Detection2DArray message on topic /detected_objects. Also (by default) publishes Image (with labels and bounding boxes) message on topic /annotated_image. The object detection is performed by PyTorch using MobileNet.
+|Package Name|Description|
+|------------|-----------|
+|coco_detector| Package containing coco_detector_node for listening on ROS2 topic /image and publishing ROS2 Detection2DArray message on topic /detected_objects. Also (by default) publishes Image (with labels and bounding boxes) message on topic /annotated_image. The object detection is performed by PyTorch using MobileNet.|
 
 ### Tested Hardware
 
@@ -83,7 +85,7 @@ Example Use:
 ros2 run coco_detector coco_detector_node --ros-args -p publish_annotated_image:=False -p device:=cuda -p detection_threshold:=0.7
 ```
 
-This will run the coco detector without publishing the annotated image (it is True by default) using the default CUDA device (device=cpu by default). It sets the detection_threshold to 0.7 (it is 0.9 by default). The detection_threshold should be between 0.0 and 1.0; the higher this number the more detections will be rejected. If you have too many false detections try increasing this number. Thus only Detection2DArray messages are published on topic /detected_objects.
+This will run the coco detector without publishing the annotated image (it is True by default) using the default CUDA device (device=cpu by default). It sets the detection_threshold to 0.7 (it is 0.9 by default). The detection_threshold should be between 0.0 and 1.0; the higher this number the more detections will be rejected. If you have too many false detections try increasing this number. This publishes Detection2DArray messages on topic /detected_objects.
 
 
 ## Suggested Setup For Mobile Robotics
